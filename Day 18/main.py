@@ -13,5 +13,5 @@ def goAndTurn() -> None:
 
 goAndTurn()
 
-screen: Screen = Screen()
-screen.exitonclick()
+screen: Screen = Screen()  # type: ignore
+screen.exitonclick()  # type: ignore
