@@ -1,11 +1,11 @@
 from turtle import Turtle, Screen
 
-timmyTheTurtle = Turtle()
+timmyTheTurtle: Turtle = Turtle()
 timmyTheTurtle.shape("turtle")
 timmyTheTurtle.color("red")
 
 
-def goAndTurn():
+def goAndTurn() -> None:
     for _ in range(4):
         timmyTheTurtle.forward(100)
         timmyTheTurtle.left(90)
@@ -13,5 +13,5 @@ def goAndTurn():
 
 goAndTurn()
 
-screen = Screen()
+screen: Screen = Screen()
 screen.exitonclick()
