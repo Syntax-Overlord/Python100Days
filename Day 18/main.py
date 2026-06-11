@@ -1,17 +1,33 @@
-from turtle import Turtle, Screen
-
-timmyTheTurtle: Turtle = Turtle()
-timmyTheTurtle.shape("turtle")
-timmyTheTurtle.color("red")
+import turtle as tr
+import random as rd
+import colorgram as cg
 
 
-def goAndTurn() -> None:
-    for _ in range(4):
-        timmyTheTurtle.forward(100)
-        timmyTheTurtle.left(90)
+def randomColor():
+    color_palate = cg.extract("image.jpg", 5)
+    palate = []
+    for c in color_palate:
+        palate.append((c.rgb.r, c.rgb.g, c.rgb.b))
+
+    return rd.choice(palate)
 
 
-goAndTurn()
+# print(randomColor())
 
-screen: Screen = Screen()  # type: ignore
-screen.exitonclick()  # type: ignore
+t = tr.Turtle()
+t.speed("fastest")
+
+tr.colormode(255)
+
+dots = 0
+
+while dots < 10:
+    t.color(randomColor())
+    t.pensize(20)
+    t.penup()
+    t.forward(30)
+    t.pendown()
+    dots += 1
+
+screen = tr.Screen()
+screen.exitonclick()
